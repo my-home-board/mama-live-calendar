@@ -1,3 +1,4 @@
+
 [
   {
     "id": "mama",
@@ -5,5 +6,12 @@
     "enabled": true,
     "source": "fanpla_schedule",
     "url": "https://mama.fanpla.jp/live_information/schedule/list/"
+  },
+  {
+    "id": "nightmare",
+    "name": "NIGHTMARE",
+    "enabled": true,
+    "source": "nightmare_schedule",
+    "url": "https://nightmare-web.com/schedule/list/"
   }
 ]
