@@ -96,11 +96,15 @@ def fetch_nightmare(artist):
 
             # リリースイベント以降の案内文を削除
             # 「リリースイベント」という名称は残す
+           
+            # リリースイベントの後ろにある時間・会場案内を削除
             if "リリースイベント" in title:
-                title = (
-                    title.split("リリースイベント", 1)[0].strip()
-                    + " リリースイベント"
-                )
+                title = re.sub(
+                    r"(リリースイベント).*",
+                    r"\1",
+                    title
+                ).strip()
+
 
             if not title:
                 title = "LIVE"
