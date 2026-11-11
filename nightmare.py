@@ -142,12 +142,17 @@ def fetch_nightmare(artist):
                 text
             )
 
-            if venue_match:
+       
+            if "リリースイベント" in title:
+                # リリースイベントは会場表記が統一されていないため、
+                # 誤った情報を登録しないよう空欄にする
+                location = ""
+            elif venue_match:
                 venue_text = venue_match.group(1).strip()
-                # 都道府県名の後ろの「・」を除去
                 location = venue_text.split("・", 1)[-1].strip()
             else:
                 location = ""
+
 
 
 
