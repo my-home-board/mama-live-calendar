@@ -1,0 +1,52 @@
+
+name: Test NIGHTMARE
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test NIGHTMARE schedule
+        run: |
+          python - <<'PY'
+          from nightmare import fetch_nightmare
+
+          artist = {
+              "id": "nightmare",
+              "name": "NIGHTMARE",
+              "url": "https://nightmare-web.com/schedule/list/"
+          }
+
+          events = fetch_nightmare(artist)
+
+          print(f"取得件数: {len(events)}")
+
+          for event in events:
+              print(
+                  event["start"],
+                  event["title"],
+                  event["location"],
+                  event["url"]
+              )
+
+          if not events:
+              raise RuntimeError(
+                  "公演を取得できませんでした。"
+                  "一覧ページの構造を確認してください。"
+              )
+          PY
