@@ -138,8 +138,7 @@ def main():
     dest.write_bytes(('\r\n'.join(fold(line) for line in lines) + '\r\n').encode('utf-8'))
     print(f'Generated {len(events)} events: {dest}')
 
-if __name__ == '__main__':
-    main()
+
 
 def write_artist_calendar(events, artist_id, artist_name):
     stamp = datetime.now(ZoneInfo("UTC")).strftime("%Y%m%dT%H%M%SZ")
@@ -177,3 +176,6 @@ def write_artist_calendar(events, artist_id, artist_name):
     )
 
     print(f"Generated {len(events)} events: {dest}")
+
+if __name__ == '__main__':
+    main()
