@@ -108,6 +108,9 @@ def fetch_nightmare(artist):
 
             if not title:
                 title = "LIVE"
+                
+            print(f"TITLE CHECK: {detail_url} -> {title!r}")
+
 
 
             time_match = re.search(
