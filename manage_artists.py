@@ -49,7 +49,7 @@ if action == "add":
     artists.append({
         "id": artist_id,
         "name": name,
-        "enabled": True,
+        "enabled": False,
         "source": "fanpla_schedule",
         "url": url.split("?")[0].rstrip("/") + "/"
     })
