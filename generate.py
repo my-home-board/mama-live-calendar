@@ -9,6 +9,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
+from nightmare import fetch_nightmare
+
 
 ROOT = Path(__file__).resolve().parent
 TZ = ZoneInfo('Asia/Tokyo')
@@ -106,9 +108,16 @@ def main():
     for artist in artists:
         if not artist.get('enabled', True):
             continue
-        if artist['source'] != 'fanpla_schedule':
-            raise ValueError(f'Unsupported source for {artist["id"]}; adapter required')
-        events.extend(fetch_fanpla(artist))
+       
+        if artist["source"] == "fanpla_schedule":
+            events.extend(fetch_fanpla(artist))
+        elif artist["source"] == "nightmare_schedule":
+            events.extend(fetch_nightmare(artist))
+        else:
+            raise ValueError(
+                f'Unsupported source for {artist["id"]}; adapter required'
+            )
+
     stamp = datetime.now(ZoneInfo('UTC')).strftime('%Y%m%dT%H%M%SZ')
     lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Personal Live Calendar//JP','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:LIVE SCHEDULE','X-WR-TIMEZONE:Asia/Tokyo']
     for e in sorted(events, key=lambda e: str(e['start'])):
