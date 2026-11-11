@@ -73,10 +73,38 @@ def fetch_nightmare(artist):
             if show_date < today:
                 continue
 
+           
+            # 一覧ページから公演タイトルを取得
             title = link.get_text(" ", strip=True)
-            title = re.sub(r"^TOUR\s*", "", title).strip()
+
+            # 先頭の分類表示（TOUR / EVENT）を削除
+            title = re.sub(
+                r"^(?:TOUR|EVENT)\s+",
+                "",
+                title,
+                flags=re.I
+            ).strip()
+
+            # 【NIGHTMARE】を付けるため、
+            # タイトル先頭の重複するNIGHTMAREを削除
+            title = re.sub(
+                r"^NIGHTMARE\s+",
+                "",
+                title,
+                flags=re.I
+            ).strip()
+
+            # リリースイベント以降の案内文を削除
+            # 「リリースイベント」という名称は残す
+            if "リリースイベント" in title:
+                title = (
+                    title.split("リリースイベント", 1)[0].strip()
+                    + " リリースイベント"
+                )
+
             if not title:
-                title = "NIGHTMARE LIVE"
+                title = "LIVE"
+
 
             time_match = re.search(
                 r"OPEN\s*(\d{1,2}:\d{2})\s*/\s*"
