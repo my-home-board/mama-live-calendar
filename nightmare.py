@@ -30,11 +30,18 @@ def fetch_nightmare(artist):
         year = today.year + (today.month - 1 + offset) // 12
         month = (today.month - 1 + offset) % 12 + 1
 
+        
+        month_url = (
+            f"https://nightmare-web.com/schedule/list/"
+            f"{year}/{month}/"
+            "?cat=L_ALL,live02,live03,live04,live05,live06,live07,live08"
+        )
+
         response = SESSION.get(
-            artist["url"],
-            params={"year": year, "month": month},
+            month_url,
             timeout=25
         )
+
         response.raise_for_status()
         listing = BeautifulSoup(response.text, "html.parser")
 
