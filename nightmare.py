@@ -95,9 +95,20 @@ def fetch_nightmare(artist):
                 end = show_date + timedelta(days=1)
                 hours = "未掲載"
 
-            # 会場名はタイトル内の山括弧から取得
-            venue_match = re.search(r"<([^<>]+)>", title)
-            location = venue_match.group(1) if venue_match else ""
+            
+            # 詳細ページの公演日が書かれた行から会場を取得
+            venue_match = re.search(
+                r"\d{4}年\d{1,2}月\d{1,2}日"
+                r"\s*[（(][^)）]+[)）]\s*"
+                r"(?:[^・\n]+・)?([^\n]+)",
+                text
+            )
+
+            if venue_match:
+                location = venue_match.group(1).strip()
+            else:
+                location = ""
+
 
             event_id = detail_url.rstrip("/").split("/")[-1]
 
