@@ -133,18 +133,22 @@ def fetch_nightmare(artist):
                 hours = "未掲載"
 
             
-            # 詳細ページの公演日が書かれた行から会場を取得
+            
+            # 公演日が記載された行から会場名を取得
             venue_match = re.search(
                 r"\d{4}年\d{1,2}月\d{1,2}日"
-                r"\s*[（(][^)）]+[)）]\s*"
-                r"(?:[^・\n]+・)?([^\n]+)",
+                r"\s*[（(][^）)]+[）)]"
+                r"\s*([^\n]+)",
                 text
             )
 
             if venue_match:
-                location = venue_match.group(1).strip()
+                venue_text = venue_match.group(1).strip()
+                # 都道府県名の後ろの「・」を除去
+                location = venue_text.split("・", 1)[-1].strip()
             else:
                 location = ""
+
 
 
             event_id = detail_url.rstrip("/").split("/")[-1]
@@ -163,6 +167,8 @@ def fetch_nightmare(artist):
                 ),
                 "url": detail_url
             })
+
+            print(f"EVENT CHECK: {events[-1]['title']!r}")
 
     print(f'NIGHTMARE: {len(events)} events')
     return events
