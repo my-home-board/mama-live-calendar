@@ -5,5 +5,12 @@
     "enabled": true,
     "source": "fanpla_schedule",
     "url": "https://mama.fanpla.jp/live_information/schedule/list/"
+  },
+  {
+    "id": "test_artist",
+    "name": "TEST ARTIST",
+    "enabled": false,
+    "source": "fanpla_schedule",
+    "url": "https://mama.fanpla.jp/live_information/schedule/list/"
   }
 ]
