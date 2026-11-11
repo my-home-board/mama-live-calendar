@@ -104,19 +104,29 @@ def fold(line):
 
 def main():
     artists = json.loads((ROOT / 'artists.json').read_text(encoding='utf-8'))
+    
     events = []
     for artist in artists:
-        if not artist.get('enabled', True):
+        if not artist.get("enabled", True):
             continue
-       
+
         if artist["source"] == "fanpla_schedule":
-            events.extend(fetch_fanpla(artist))
+            artist_events = fetch_fanpla(artist)
         elif artist["source"] == "nightmare_schedule":
-            events.extend(fetch_nightmare(artist))
+            artist_events = fetch_nightmare(artist)
         else:
             raise ValueError(
                 f'Unsupported source for {artist["id"]}; adapter required'
             )
+
+        events.extend(artist_events)
+
+        write_artist_calendar(
+            artist_events,
+            artist["id"],
+            artist["name"]
+        )
+
 
     stamp = datetime.now(ZoneInfo('UTC')).strftime('%Y%m%dT%H%M%SZ')
     lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Personal Live Calendar//JP','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:LIVE SCHEDULE','X-WR-TIMEZONE:Asia/Tokyo']
