@@ -130,3 +130,40 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+def write_artist_calendar(events, artist_id, artist_name):
+    stamp = datetime.now(ZoneInfo("UTC")).strftime("%Y%m%dT%H%M%SZ")
+
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Personal Live Calendar//JP",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        f"X-WR-CALNAME:{esc(artist_name)}",
+        "X-WR-TIMEZONE:Asia/Tokyo",
+    ]
+
+    for e in sorted(events, key=lambda e: str(e["start"])):
+        lines += [
+            "BEGIN:VEVENT",
+            f'UID:{e["uid"]}',
+            f"DTSTAMP:{stamp}",
+            dtline("DTSTART", e["start"]),
+            dtline("DTEND", e["end"]),
+            f'SUMMARY:{esc(e["title"])}',
+            f'LOCATION:{esc(e["location"])}',
+            f'DESCRIPTION:{esc(e["description"])}',
+            f'URL:{e["url"]}',
+            "END:VEVENT",
+        ]
+
+    lines.append("END:VCALENDAR")
+
+    dest = ROOT / "docs" / f"{artist_id}.ics"
+    dest.parent.mkdir(exist_ok=True)
+    dest.write_bytes(
+        ("\r\n".join(fold(line) for line in lines) + "\r\n").encode("utf-8")
+    )
+
+    print(f"Generated {len(events)} events: {dest}")
