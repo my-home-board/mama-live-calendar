@@ -1,0 +1,58 @@
+
+name: Manage artists
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: '操作を選択'
+        required: true
+        type: choice
+        options:
+          - add
+          - disable
+          - enable
+          - delete
+      artist_id:
+        description: 'アーティストID（例: mama）'
+        required: true
+        type: string
+      artist_name:
+        description: '追加時のアーティスト名'
+        required: false
+        type: string
+      schedule_url:
+        description: '追加時の公式スケジュールURL'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Manage artist
+        env:
+          ACTION: ${{ inputs.action }}
+          ARTIST_ID: ${{ inputs.artist_id }}
+          ARTIST_NAME: ${{ inputs.artist_name }}
+          SCHEDULE_URL: ${{ inputs.schedule_url }}
+        run: python manage_artists.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artists.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Manage artists"
+            git push
+          fi
