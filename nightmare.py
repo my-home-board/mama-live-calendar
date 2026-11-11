@@ -52,10 +52,12 @@ def fetch_nightmare(artist):
                 continue
             seen.add(detail_url)
 
-            # TOURのみ対象にする
+            
+            # TOURとEVENTを取得対象にする
             label = link.get_text(" ", strip=True)
-            if not re.search(r"\bTOUR\b", label, re.I):
+            if not re.search(r"\b(TOUR|EVENT)\b", label, re.I):
                 continue
+
 
             detail = get_soup(detail_url)
             text = detail.get_text("\n", strip=True)
