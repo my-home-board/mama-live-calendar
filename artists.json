@@ -1,3 +1,9 @@
 [
-  {"id":"mama","name":"MAMA.","enabled":true,"source":"fanpla_schedule","url":"https://mama.fanpla.jp/live_information/schedule/list/"}
+  {
+    "id": "mama",
+    "name": "MAMA.",
+    "enabled": true,
+    "source": "fanpla_schedule",
+    "url": "https://mama.fanpla.jp/live_information/schedule/list/"
+  }
 ]
