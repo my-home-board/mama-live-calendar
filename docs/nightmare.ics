@@ -7,125 +7,115 @@ X-WR-CALNAME:NIGHTMARE
 X-WR-TIMEZONE:Asia/Tokyo
 BEGIN:VEVENT
 UID:nightmare-5001@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:【NIGHTMARE】34thシングル「極夜行」リリースイベン
  ト
 LOCATION:
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5001\n
- 開場/開演: 未掲載\n※終了時刻は未公表のため仮に3時
- 間枠で表示（時間未掲載なら終日）
+ 開場/開演: 未掲載
 URL:https://nightmare-web.com/schedule/detail/5001
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5002@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:【NIGHTMARE】34thシングル「極夜行」リリースイベン
  ト
 LOCATION:
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5002\n
- 開場/開演: 未掲載\n※終了時刻は未公表のため仮に3時
- 間枠で表示（時間未掲載なら終日）
+ 開場/開演: 未掲載
 URL:https://nightmare-web.com/schedule/detail/5002
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-4994@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;TZID=Asia/Tokyo:20261122T170000
 DTEND;TZID=Asia/Tokyo:20261122T200000
 SUMMARY:【NIGHTMARE】TOUR 2026 極夜行 <東京・EX THEATER ROPPONGI>
 LOCATION:EX THEATER ROPPONGI
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/4994\n
- 開場/開演: OPEN 16:00 / START 17:00\n※終了時刻は未公表のた
- め仮に3時間枠で表示（時間未掲載なら終日）
+ 開場/開演: OPEN 16:00 / START 17:00
 URL:https://nightmare-web.com/schedule/detail/4994
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5003@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:【NIGHTMARE】34thシングル「極夜行」リリースイベン
  ト
 LOCATION:
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5003\n
- 開場/開演: 未掲載\n※終了時刻は未公表のため仮に3時
- 間枠で表示（時間未掲載なら終日）
+ 開場/開演: 未掲載
 URL:https://nightmare-web.com/schedule/detail/5003
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5009@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;VALUE=DATE:20261207
 DTEND;VALUE=DATE:20261208
 SUMMARY:【NIGHTMARE】Manga Barcelona
 LOCATION:
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5009\n
- 開場/開演: 未掲載\n※終了時刻は未公表のため仮に3時
- 間枠で表示（時間未掲載なら終日）
+ 開場/開演: 未掲載
 URL:https://nightmare-web.com/schedule/detail/5009
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5010@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 SUMMARY:【NIGHTMARE】Manga Barcelona
 LOCATION:
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5010\n
- 開場/開演: 未掲載\n※終了時刻は未公表のため仮に3時
- 間枠で表示（時間未掲載なら終日）
+ 開場/開演: 未掲載
 URL:https://nightmare-web.com/schedule/detail/5010
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5039@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;TZID=Asia/Tokyo:20261220T170000
 DTEND;TZID=Asia/Tokyo:20261220T200000
 SUMMARY:【NIGHTMARE】TOUR 2026 リヴィド <愛知>
 LOCATION:名古屋THE BOTTOM LINE
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5039\n
- 開場/開演: OPEN 16:30 / START 17:00\n※終了時刻は未公表のた
- め仮に3時間枠で表示（時間未掲載なら終日）
+ 開場/開演: OPEN 16:30 / START 17:00
 URL:https://nightmare-web.com/schedule/detail/5039
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5040@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;TZID=Asia/Tokyo:20261221T183000
 DTEND;TZID=Asia/Tokyo:20261221T213000
 SUMMARY:【NIGHTMARE】TOUR 2026 リヴィド <大阪>
 LOCATION:UMEDA CLUB QUATTRO
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5040\n
- 開場/開演: OPEN 18:00 / START 18:30\n※終了時刻は未公表のた
- め仮に3時間枠で表示（時間未掲載なら終日）
+ 開場/開演: OPEN 18:00 / START 18:30
 URL:https://nightmare-web.com/schedule/detail/5040
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5041@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;TZID=Asia/Tokyo:20261226T170000
 DTEND;TZID=Asia/Tokyo:20261226T200000
 SUMMARY:【NIGHTMARE】TOUR 2026 リヴィド <宮城>
 LOCATION:仙台GIGS
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5041\n
- 開場/開演: OPEN 16:30 / START 17:00\n※終了時刻は未公表のた
- め仮に3時間枠で表示（時間未掲載なら終日）
+ 開場/開演: OPEN 16:30 / START 17:00
 URL:https://nightmare-web.com/schedule/detail/5041
 END:VEVENT
 BEGIN:VEVENT
 UID:nightmare-5042@live-calendar
-DTSTAMP:20261111T095152Z
+DTSTAMP:20261112T041515Z
 DTSTART;TZID=Asia/Tokyo:20261228T180000
 DTEND;TZID=Asia/Tokyo:20261228T210000
 SUMMARY:【NIGHTMARE】TOUR 2026 リヴィド <東京>
 LOCATION:LINE CUBE SHIBUYA
 DESCRIPTION:公式情報: https://nightmare-web.com/schedule/detail/5042\n
- 開場/開演: OPEN 17:00 / START 18:00\n※終了時刻は未公表のた
- め仮に3時間枠で表示（時間未掲載なら終日）
+ 開場/開演: OPEN 17:00 / START 18:00
 URL:https://nightmare-web.com/schedule/detail/5042
 END:VEVENT
 END:VCALENDAR
