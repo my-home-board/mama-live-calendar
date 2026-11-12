@@ -73,7 +73,9 @@ def fetch_fanpla(artist):
             if not times:
                 start = date(day.year, day.month, day.day)
                 end = day + timedelta(days=1)
-            desc = f'公式情報: {url}\\n開場/開演: {hours or "未掲載"}\\n※終了時刻は未公表のため仮に3時間枠で表示（時間未掲載なら終日）'
+            
+            desc = f'公式情報: {url}\n開場/開演: {hours or "未掲載"}'
+
             events.append({'uid':f'{artist["id"]}-{url.rstrip("/").split("/")[-1]}@live-calendar', 'title':f'【{artist["name"]}】{title}', 'start':start, 'end':end, 'location':location, 'description':desc, 'url':url})
     return events
 
