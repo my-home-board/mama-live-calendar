@@ -164,12 +164,12 @@ def fetch_nightmare(artist):
                 "start": start,
                 "end": end,
                 "location": location,
+                
                 "description": (
                     f"公式情報: {detail_url}\n"
-                    f"開場/開演: {hours}\n"
-                    "※終了時刻は未公表のため仮に3時間枠で表示"
-                    "（時間未掲載なら終日）"
+                    f"開場/開演: {hours}"
                 ),
+
                 "url": detail_url
             })
 
